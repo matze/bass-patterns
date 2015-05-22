@@ -156,6 +156,25 @@ a minor 7th is a major 6th.
 \end{tikzpicture}
 
 
+
+\subsection{Exercises}
+
+\subsubsection*{Major 7th}
+
+Beginning with the root on the low E string
+
+\lilypond[fragment, staffsize=15]{
+  \clef bass
+  \key g \major
+  g,8-2 b,-1 d-4 fis-3
+  b,-1 d-4 fis-3 g-4
+  d fis g b
+  fis g b d'
+  g b d' fis'
+  b d' fis' g'
+}
+
+
 \section{Scales}
 
 \subsection{Major}

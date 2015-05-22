@@ -1,11 +1,15 @@
 .PHONY: clean
-SRC=bass-patterns.tex
-PDF=bass-patterns.pdf
+SRC=bass-patterns.lytex
+TEX=build/bass-patterns.tex
+PDF=build/bass-patterns.pdf
 
 all: $(PDF)
 
-%.pdf: %.tex
-	@xelatex $<
+$(PDF): $(TEX)
+	@cd build; xelatex $(shell basename $<)
 
+$(TEX): $(SRC)
+	@lilypond-book --output=build --pdf --latex-program=xelatex $<
+ 
 clean:
-	@rm -f $(PDF) $(PDF:.pdf=.aux) $(PDF:.pdf=.log)
+	@rm -rf build/
