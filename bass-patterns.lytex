@@ -30,7 +30,8 @@
     fill=white,
     draw=black!90,
     circle,
-    inner sep=2.5pt,
+    font=\small,
+    inner sep=1.55pt,
   },
 }
 
@@ -40,14 +41,14 @@
   \pgfmathsetmacro\nfretsm{1+\nfrets}
   % frets
   \foreach \x in {1, ..., \nfrets}
-    \draw[fret] (\x, 0) -- (\x, 1.95);
+    \draw[fret] (\x, 0) -- (\x, 1.5);
 
   % strings
-  \foreach \y in {0, 0.65, 1.3, 1.95}
+  \foreach \y in {0, 0.5, 1.0, 1.5}
     \draw[string] (0, \y) -- (\nfretsm, \y);
 
   \foreach \x / \y / \z [count=\ni]  in \data{%
-    \pgfmathsetmacro\yr{0.65*\y}
+    \pgfmathsetmacro\yr{0.5*\y}
     \node[fretted] (fretted-\ni) at (\x, \yr) {\z};
   }
 }
